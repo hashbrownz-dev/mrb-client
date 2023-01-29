@@ -22,7 +22,7 @@ const [ auth, setAuth ] = useState(false);
                 <Route path="/recipes/create" element={<CreateRecipe user={auth} />} />
                 <Route path="/about" element={<ShowRecipe user={auth} />} />
                 <Route path="/login" element={<Login user={auth} setUser={setAuth} />} />
-                <Route path="/register" element={<Register user={auth} />} />
+                <Route path="/register" element={<Register user={auth} setUser={setAuth} />} />
             </Routes>
         </Router>
     )

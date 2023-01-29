@@ -1,0 +1,54 @@
+:root{
+    --primary:rgb(109,143,168);
+    --secondary:rgb(255,204,51);
+    --neutral:rgb(69,63,52);
+}
+
+html,body,main{
+    font-family: "aaux-next", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 20%;
+}
+nav > h1{
+    margin:0;
+}
+
+.user-form{
+    margin: 0 auto;
+    width: 60%;
+}
+
+.user-form > h2{
+    background-color: var(--primary);
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+.user-form > form{
+    background-color: var(--primary);
+    color: white;
+    padding: 16px;
+}
+
+.user-form > form > label{
+    font-weight: 700;
+}
+
+.user-form > form > input{
+    
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.user-form > form > p{
+    margin: 4px;
+    text-align: center;
+}

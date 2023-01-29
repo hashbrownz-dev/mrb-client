@@ -1,8 +1,9 @@
 import React from 'react';
+import RegisterForm from '../../Components/Forms/Register';
 
-const Register = ()=>{
+const Register = ({user, setUser})=>{
     return(
-        <h1>Register</h1>
+        <RegisterForm user={user} setUser={setUser} />
     )
 }
 
