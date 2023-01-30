@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import FormButton from "./Button";
 
 const RegisterForm = ( {user, setUser} ) => {
     const handleSubmit = async (event) => {
@@ -19,7 +20,7 @@ const RegisterForm = ( {user, setUser} ) => {
                 <input type="password" name="password"></input>
                 <label htmlFor="confirmPassword">Confirm Password:</label>
                 <input type="password" name="confirmPassword"></input>
-                <input type="submit" value="Create Account"></input>
+                <FormButton type="submit" value="Create Account" />
             </form>
             { user && <Navigate to="/" /> }
         </div>

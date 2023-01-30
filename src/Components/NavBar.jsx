@@ -1,16 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-const LinkContainer = () => {
+const LinkContainer = ({user, setUser}) => {
+    const linkStyle = {
+        color:'white',
+        textDecoration:'none',
+        fontSize:'18px'
+    }
+    const logOut = (event)=>{
+        // event.preventDefault();
+        console.log('log out')
+    }
     return (
-        <div>
+        <ul>
             {/* View My Recipes */}
-            <Link to="/">My Recipes</Link>
+            <li><Link to="/" style={linkStyle}>My Recipes</Link></li>
             {/* Create New Recipe */}
-            <Link to="/recipes/create">New Recipe</Link>
+            <li><Link to="/recipes/create" style={linkStyle}>New Recipe</Link></li>
             {/* About */}
-            <Link to="/about">About</Link>
-        </div>
+            <li><Link to="/about" style={linkStyle}>About</Link></li>
+            {/* Log Out */}
+            <li><a href="/logout" onClick={logOut} style={linkStyle}>Log Out</a></li>
+        </ul>
     )
 }
 

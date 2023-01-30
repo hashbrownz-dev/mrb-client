@@ -1,7 +1,9 @@
 :root{
     --primary:rgb(109,143,168);
     --secondary:rgb(255,204,51);
+    --border:rgb(255,95,0);
     --neutral:rgb(69,63,52);
+    --shadow: rgba(69,63,52,0.5);
 }
 
 html,body,main{
@@ -10,22 +12,16 @@ html,body,main{
     padding: 0;
 }
 
-nav{
-    background-color: var(--primary);
-    color: white;
-    padding: 8px 20%;
-}
-nav > h1{
-    margin:0;
-}
+/* FORMS */
 
 .user-form{
     margin: 0 auto;
-    width: 60%;
+    max-width: 360px;
 }
 
 .user-form > h2{
     background-color: var(--primary);
+    box-shadow: 4px 8px var(--shadow);
     color: white;
     padding: 16px;
     text-align: center;
@@ -33,22 +29,67 @@ nav > h1{
 
 .user-form > form{
     background-color: var(--primary);
+    box-shadow: 4px 8px var(--shadow);
     color: white;
     padding: 16px;
 }
 
 .user-form > form > label{
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .user-form > form > input{
-    
+    box-sizing: border-box;
     display:block;
-    margin: 0 auto;
+    height: 28px;
+    margin: 8px auto;
     width: 100%;
 }
 
 .user-form > form > p{
     margin: 4px;
     text-align: center;
+}
+
+.form-button{
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    width:240px;
+}
+
+.form-button:hover{
+    cursor: pointer;
+}
+
+/* NAV */
+
+nav {
+    align-items: center;
+    background-color: var(--primary);
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    padding: 8px 20%;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav > h1{
+    margin:0;
+}
+
+nav > ul{
+    list-style-type: none;
+    padding:0;
+    margin:0
+}
+
+nav > ul > li{
+    float: left;
+    text-align: center;
+    padding: 14px;
 }

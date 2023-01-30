@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./Components/NavBar";
 // IMPORT PAGES
 import Login from "./Pages/User/login";
+import LogOut from "./Pages/User/logout";
 import Register from "./Pages/User/register";
 import CreateRecipe from "./Pages/Recipe/create";
 import RecipeHome from "./Pages/Recipe";
@@ -22,6 +23,7 @@ const [ auth, setAuth ] = useState(false);
                 <Route path="/recipes/create" element={<CreateRecipe user={auth} />} />
                 <Route path="/about" element={<ShowRecipe user={auth} />} />
                 <Route path="/login" element={<Login user={auth} setUser={setAuth} />} />
+                <Route path="/logout" element={<LogOut user={auth} setUser={setAuth} />} />
                 <Route path="/register" element={<Register user={auth} setUser={setAuth} />} />
             </Routes>
         </Router>
