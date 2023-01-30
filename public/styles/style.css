@@ -12,7 +12,36 @@ html,body,main{
     padding: 0;
 }
 
-/* FORMS */
+h2{
+    color: var(--primary);
+    text-align: center;
+}
+
+input{
+    height: 28px;
+    padding: 8px;
+}
+
+input, textarea{
+    box-sizing: border-box;
+    border: 3px solid var(--primary);
+    border-radius: 4px;
+    display:block;
+    margin: 8px auto;
+    width: 100%;
+}
+
+textarea{
+    padding: 4px 8px;
+    resize: none;
+}
+
+textarea:focus-visible, input:focus-visible{
+    border-color: var(--secondary);
+    outline-color: var(--secondary);
+}
+
+/* USER FORMS */
 
 .user-form{
     margin: 0 auto;
@@ -61,6 +90,16 @@ html,body,main{
 
 .form-button:hover{
     cursor: pointer;
+}
+
+/* RECIPE FORMS */
+
+.recipe-form{
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+    max-width: 480px;
 }
 
 /* NAV */
