@@ -1,9 +1,9 @@
 import React from 'react';
 import RegisterForm from '../../Components/Forms/Register';
 
-const Register = ({user, setUser})=>{
+const Register = ({ page, setPage, auth, setAuth, current, setCurrent })=>{
     return(
-        <RegisterForm user={user} setUser={setUser} />
+        <RegisterForm page={page} setPage={setPage} auth={auth} setAuth={setAuth} current={current} setCurrent={setCurrent} />
     )
 }
 

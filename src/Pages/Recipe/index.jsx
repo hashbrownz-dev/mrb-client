@@ -1,8 +1,7 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import CardContainer from '../../Components/Recipe/CardContainer';
 
-const RecipeHome = (props)=>{
+const Index = (props)=>{
     const { user, current, setCurrent } = props;
     const testRecipe = {
         title : 'Japanese Curry',
@@ -28,11 +27,10 @@ const RecipeHome = (props)=>{
     const myRecipes = Array(12).fill(testRecipe);
     return(
         <>
-            { !user && <Navigate to="/login" /> }
             <h2>My Recipes</h2>
             <CardContainer recipes={myRecipes} current={current} setCurrent={setCurrent} />
         </>       
     )
 }
 
-export default RecipeHome;
+export default Index;

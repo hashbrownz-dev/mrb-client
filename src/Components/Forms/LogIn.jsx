@@ -1,14 +1,14 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import FormButton from "./Button";
 
-const LogInForm = ( {user, setUser} ) => {
+const LogInForm = ( { page, setPage, auth, setAuth, current, setCurrent } ) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setUser(!user);
+        setAuth(!auth);
+        setPage('index');
     }
     const handleRegister = () => {
-        window.location.href = 'http://localhost:3000/register'
+        setPage('register');
     }
     
     return (
@@ -22,7 +22,6 @@ const LogInForm = ( {user, setUser} ) => {
                 <FormButton type='submit' value='Log In' />
                 <FormButton type="button" value="Register" action={handleRegister} />
             </form>
-            { user && <Navigate to="/" /> }
         </div>
     )
 }

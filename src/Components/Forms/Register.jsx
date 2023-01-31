@@ -1,11 +1,11 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import FormButton from "./Button";
 
-const RegisterForm = ( {user, setUser} ) => {
-    const handleSubmit = async (event) => {
+const RegisterForm = ( { page, setPage, auth, setAuth } ) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        setUser(!user);
+        setAuth(!auth);
+        setPage('index');
     }
     
     return (
@@ -22,7 +22,6 @@ const RegisterForm = ( {user, setUser} ) => {
                 <input type="password" name="confirmPassword"></input>
                 <FormButton type="submit" value="Create Account" />
             </form>
-            { user && <Navigate to="/" /> }
         </div>
     )
 }

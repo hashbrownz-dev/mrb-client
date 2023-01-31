@@ -1,9 +1,9 @@
 import React from 'react';
 import LogInForm from '../../Components/Forms/LogIn';
 
-const Login = ({user, setUser})=>{
+const Login = ({ page, setPage, auth, setAuth, current, setCurrent })=>{
     return(
-        <LogInForm user={user} setUser={setUser} />
+        <LogInForm page={page} setPage={setPage} auth={auth} setAuth={setAuth} current={current} setCurrent={setCurrent} />
     )
 }
 
