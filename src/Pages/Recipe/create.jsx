@@ -3,7 +3,7 @@ import RecipeForm from '../../Components/Forms/Recipe';
 
 const CreateRecipe = ()=>{
     return(
-        <RecipeForm title="Create New Recipe" />
+        <RecipeForm pageTitle="Create New Recipe" />
     )
 }
 

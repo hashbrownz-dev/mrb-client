@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // IMPORT COMPONENTS
 import NavBar from "./Components/NavBar";
@@ -20,7 +19,7 @@ const App = (props) => {
             case 'index':
                 // Displays All Recipes on Index
                 return <Index page={page} setPage={setPage} auth={auth} setAuth={setAuth} current={current} setCurrent={setCurrent} />
-            case 'login':
+            case 'log in':
                 // Display Log In Page
                 return <Login page={page} setPage={setPage} auth={auth} setAuth={setAuth} current={current} setCurrent={setCurrent} />
             case 'register':
@@ -38,14 +37,14 @@ const App = (props) => {
             case 'delete recipe':
                 break;
             case 'log out':
-                break;
+                return <LogOut page={page} setPage={setPage} auth={auth} setAuth={setAuth} current={current} setCurrent={setCurrent} />
             default:
                 break;
         }
     }
 
     // Page Determines Navigation
-    const [ page, setPage ] = useState('login');
+    const [ page, setPage ] = useState('log in');
     // Auth handles user authorization
     const [ auth, setAuth ] = useState(false);
     // Current is for viewing specific Recipes
@@ -59,17 +58,8 @@ const App = (props) => {
 
     return (
         <div>
-            <NavBar user={auth} />
+            <NavBar auth={auth} setAuth={setAuth} page={page} setPage={setPage} />
             { getPage(page) }
-            {/* <Routes>
-                <Route path="/" element={<RecipeHome user={auth} current={current} setCurrent={setCurrent} />} />
-                <Route path="/recipes/create" element={<CreateRecipe user={auth} />} />
-                <Route path="/recipes/edit" element={<EditRecipe />} />
-                <Route path="/recipes/view" element={<ShowRecipe current={current} />} />
-                <Route path="/login" element={<Login user={auth} setUser={setAuth} />} />
-                <Route path="/logout" element={<LogOut user={auth} setUser={setAuth} />} />
-                <Route path="/register" element={<Register user={auth} setUser={setAuth} />} />
-            </Routes> */}
             <Footer />
         </div>
     )

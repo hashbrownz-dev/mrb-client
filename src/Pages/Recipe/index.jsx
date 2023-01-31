@@ -1,8 +1,7 @@
 import React from 'react';
 import CardContainer from '../../Components/Recipe/CardContainer';
 
-const Index = (props)=>{
-    const { user, current, setCurrent } = props;
+const Index = ({ auth, setAuth, current, setCurrent, page, setPage })=>{
     const testRecipe = {
         title : 'Japanese Curry',
         imgSrc : './images/Japanese-Chicken-Curry-3769-II.jpg',
@@ -28,7 +27,7 @@ const Index = (props)=>{
     return(
         <>
             <h2>My Recipes</h2>
-            <CardContainer recipes={myRecipes} current={current} setCurrent={setCurrent} />
+            <CardContainer recipes={myRecipes} current={current} setCurrent={setCurrent} page={page} setPage={setPage} />
         </>       
     )
 }

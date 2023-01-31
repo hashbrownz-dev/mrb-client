@@ -1,12 +1,8 @@
 import React from "react";
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
 
-const RecipeCard = (props) => {
-    const { recipe, current, setCurrent } = props;
+const RecipeCard = ({ recipe, current, setCurrent, page, setPage }) => {
+
     const { title, imgSrc, ingredients, directions } = recipe;
-
-    const [ click, setClick ] = useState(false);
 
     const handleClick = () => {
         setCurrent({
@@ -15,17 +11,13 @@ const RecipeCard = (props) => {
             ingredients,
             directions,
         });
-        setClick(true);
+        setPage('read recipe');
     }
     return(
-        <>
-        { click && <Navigate to="/recipes/view" /> }
         <div className="recipe-card" onClick={handleClick}>
             <img src={imgSrc} alt={title} />
             <p>{title}</p>
         </div>
-        </>
-        
     )
 }
 

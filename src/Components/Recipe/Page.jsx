@@ -1,15 +1,13 @@
 import React from "react";
 import FormButton from "../Forms/Button";
 
-const Ingredient = (props) => {
-    const { text } = props
+const Ingredient = ({ text }) => {
     return(
         <li>{text}</li>
     )
 }
 
-const Ingredients = (props) => {
-    const { ingredients } = props;
+const Ingredients = ({ ingredients }) => {
     return(
         <ul>
             {ingredients.map((ingredient)=><Ingredient text={ingredient} />)}
@@ -17,15 +15,13 @@ const Ingredients = (props) => {
     )
 }
 
-const Direction = (props) => {
-    const { text } = props
+const Direction = ({ text }) => {
     return(
         <li>{text}</li>
     )
 }
 
-const Directions = (props) => {
-    const { directions } = props;
+const Directions = ({ directions }) => {
     return(
         <ol>
             {directions.map((direction)=><Direction text={direction} />)}
@@ -33,11 +29,14 @@ const Directions = (props) => {
     )
 }
 
-const Recipe = (props) => {
-    const {current} = props;
+const Recipe = ( { current, setPage } ) => {
     const { title, imgSrc, ingredients, directions } = current;
-    console.log(props);
-    console.log(current);
+    const handleClickEdit = (event) => {
+        setPage('update recipe');
+    }
+    const handleClickDelete = (event) => {
+        console.log('Delete Recipe')
+    }
     return(
         <div className='recipe'>
             <h2>{title}</h2>
@@ -53,8 +52,8 @@ const Recipe = (props) => {
                 </div>
             </div>
             <form className="recipe-controls">
-                <FormButton type='button' value='edit' action='' />
-                <FormButton type='button' value='delete' action='' />
+                <FormButton type='button' value='edit' action={handleClickEdit} />
+                <FormButton type='button' value='delete' action={handleClickDelete} />
             </form>
         </div>
     )
