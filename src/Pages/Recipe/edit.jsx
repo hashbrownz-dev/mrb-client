@@ -1,10 +1,9 @@
 import React from 'react';
+import RecipeForm from '../../Components/Forms/Recipe';
 
 const EditRecipe = ({user})=>{
     return(
-        <>
-            <h1>Edit Recipe</h1>
-        </>
+        <RecipeForm title="Edit Recipe" />
     )
 }
 

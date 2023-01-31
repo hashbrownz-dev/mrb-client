@@ -12,9 +12,27 @@ html,body,main{
     padding: 0;
 }
 
+#root{
+    min-height: 100vh;
+}
+
+footer{
+    background-color: var(--neutral);
+    color: var(--secondary);
+    text-align: center;
+    text-transform: capitalize;
+    position: sticky;
+    top: 100%;
+}
+
 h2{
     color: var(--primary);
     text-align: center;
+}
+
+h3{
+    color: var(--primary);
+    padding-left: 8px;
 }
 
 input{
@@ -61,10 +79,6 @@ textarea:focus-visible, input:focus-visible{
     box-shadow: 4px 8px var(--shadow);
     color: white;
     padding: 16px;
-}
-
-.user-form > form > label{
-    /* font-weight: 700; */
 }
 
 .user-form > form > input{
@@ -131,4 +145,70 @@ nav > ul > li{
     float: left;
     text-align: center;
     padding: 14px;
+}
+
+/* RECIPES */
+
+.card-container{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1025px;
+}
+
+.recipe-card{
+    box-sizing: border-box;
+    border: 1px solid var(--neutral);
+    border-radius: 8px;
+    margin: 1%;
+    overflow: hidden;
+    width: 23%;
+}
+
+.recipe-card:hover{
+    cursor: pointer;
+    border-color: var(--primary);
+    outline: 4px solid var(--primary);
+}
+
+.recipe-card > img{
+    width: 100%;
+    max-height: 240px;
+}
+
+.recipe-card > p{
+    margin:8px;
+    text-align:center;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: var(--neutral);
+}
+
+.recipe{
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.recipe-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.recipe-hero{
+    width: 30%;
+}
+
+.id-container{
+    margin: 16px;
+}
+
+.recipe-controls{
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-controls > .form-button{
+    margin: 16px;
+    width: 120px;
 }

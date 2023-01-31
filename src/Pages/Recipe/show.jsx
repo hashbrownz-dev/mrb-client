@@ -1,8 +1,10 @@
 import React from 'react';
+import Recipe from '../../Components/Recipe/Page';
 
-const ShowRecipe = ()=>{
+const ShowRecipe = (props)=>{
+    const { current } = props;
     return(
-        <h1>Show a Single Recipe</h1>
+        <Recipe current={current} />
     )
 }
 
