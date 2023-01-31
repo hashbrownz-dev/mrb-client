@@ -18,14 +18,12 @@ import Footer from "./Components/Footer";
 const App = (props) => {
 const [ auth, setAuth ] = useState(false);
 const [ current, setCurrent ] = useState({
-    title:'null',
-    imgSrc:'null',
-    ingredients:['null'],
-    directions:['null'],
-    _id:'null',
+    title:'',
+    imgSrc:'',
+    ingredients:[''],
+    directions:[''],
+    _id:'',
 });
-
-console.log(current);
 
     return (
         <Router>
