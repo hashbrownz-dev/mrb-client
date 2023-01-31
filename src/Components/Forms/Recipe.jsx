@@ -8,11 +8,15 @@ const RecipeForm = ({ pageTitle, current }) => {
         parsedIngredients = current.ingredients.join('\n');
         parsedDirections = current.directions.join('\n');
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        pageTitle.toLowerCase().includes('edit') ? console.log('Edit') : console.log('Create');
+    }
 
     return (
         <div>
             <h2>{pageTitle}</h2>
-            <form className='recipe-form'>
+            <form className='recipe-form' onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:</label>
                 <input type="text" name="title" id="title" value={title} />
                 <label htmlFor="ingredients">Ingredients:</label>

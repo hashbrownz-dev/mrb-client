@@ -1,9 +1,18 @@
 import React from "react";
 import FormButton from "./Button";
+import { logInUser } from "../../api/user";
 
 const LogInForm = ( { page, setPage, auth, setAuth, current, setCurrent } ) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const response = await logInUser({
+            email : event.target.email.value,
+            password : event.target.password.value,
+        })
+
+        console.log(response);
+
         setAuth(!auth);
         setPage('index');
     }
