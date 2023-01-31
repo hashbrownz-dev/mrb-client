@@ -11,11 +11,13 @@ const LogInForm = ( { page, setPage, auth, setAuth, current, setCurrent } ) => {
             password : event.target.password.value,
         })
 
-        console.log(response);
-
-        setAuth(!auth);
-        setPage('index');
+        if(response.hasOwnProperty('accessToken')){
+            localStorage.setItem('user', JSON.stringify(response));
+            setAuth(!auth);
+            setPage('index');
+        }
     }
+    
     const handleRegister = () => {
         setPage('register');
     }

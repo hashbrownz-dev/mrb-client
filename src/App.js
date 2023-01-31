@@ -56,6 +56,13 @@ const App = (props) => {
         _id:'',
     });
 
+    // See if someone is logged in on this computer
+    // Check for cookie
+    if(localStorage.getItem('user') && auth===false){
+        setAuth(true);
+        setPage('index');
+    }
+
     return (
         <div>
             <NavBar auth={auth} setAuth={setAuth} page={page} setPage={setPage} />

@@ -1,11 +1,24 @@
 import React from "react";
 import FormButton from "./Button";
 
+import { registerUser } from "../../api/user";
+
 const RegisterForm = ( { page, setPage, auth, setAuth } ) => {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        setAuth(!auth);
-        setPage('index');
+        const user = {
+            name : event.target.name.value,
+            email : event.target.email.value,
+            password : event.target.password.value
+        }
+        const response = await registerUser(user);
+        if(response.hasOwnProperty('accessToken')){
+            localStorage.setItem('user', JSON.stringify(response));
+            setAuth(true);
+            setPage('index');
+        } else {
+            console.log(response);
+        }
     }
     
     return (

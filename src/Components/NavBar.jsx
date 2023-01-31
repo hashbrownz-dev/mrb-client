@@ -3,7 +3,10 @@ import React from "react";
 const Link = ({auth, setAuth, to, setPage, logOut}) => {
     const handleClick = (event)=>{
         event.preventDefault();
-        if(logOut) setAuth(!auth);
+        if(logOut) {
+            setAuth(!auth)
+            localStorage.removeItem('user');
+        };
         setPage(to);
     }
     const linkStyle = {
