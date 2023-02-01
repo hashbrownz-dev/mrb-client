@@ -24,9 +24,9 @@ My Recipe Book is a simple web app that allows users to share their favorite rec
 
 ## Getting Started
 
-> The live application can be accessed here.
+> The live application can be [accessed here](https://my-recipe-book-qj4z.onrender.com/).
 
-> A Trello board with the apps Wireframe, ERD, current and future implementations can be viewed here.
+> A Trello board with the apps Wireframe, ERD, current and future implementations can be [viewed here](https://trello.com/b/h40TpG1M/recipebook).
 
 ## Unsolved Problems
 

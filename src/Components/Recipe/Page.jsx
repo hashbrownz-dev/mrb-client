@@ -32,7 +32,7 @@ const Directions = ({ directions }) => {
 }
 
 const Recipe = ( { current, setPage } ) => {
-    const { title, imgSrc, ingredients, directions } = current;
+    const { title, ingredients, directions } = current;
     const handleClickEdit = (event) => {
         setPage('update recipe');
     }
@@ -47,7 +47,7 @@ const Recipe = ( { current, setPage } ) => {
         <div className='recipe'>
             <h2>{title}</h2>
             <div className='recipe-container'>
-                <img src={imgSrc?imgSrc:'./images/default.jpg'} alt={title} className='recipe-hero' />
+                <img src={'./images/default.jpg'} alt={title} className='recipe-hero' />
                 <div className='id-container'>
                     <h3>Ingredients:</h3>
                     <Ingredients ingredients={ingredients} />
