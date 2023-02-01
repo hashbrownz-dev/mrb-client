@@ -1,6 +1,8 @@
 import React from "react";
 import FormButton from "../Forms/Button";
 
+import { deleteRecipe } from "../../api/recipe";
+
 const Ingredient = ({ text }) => {
     return(
         <li>{text}</li>
@@ -34,8 +36,10 @@ const Recipe = ( { current, setPage } ) => {
     const handleClickEdit = (event) => {
         setPage('update recipe');
     }
-    const handleClickDelete = (event) => {
-        console.log('Delete Recipe')
+    const handleClickDelete = async (event) => {
+
+        const result = await deleteRecipe(current);
+        console.log(result);
     }
     console.log(`Rendering Recipe Page`)
     return(

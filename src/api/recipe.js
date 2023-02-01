@@ -49,6 +49,18 @@ export const updateRecipe = async (recipe) => {
     return response;
 }
 
-export const deleteRecipe = async () => {
+export const deleteRecipe = async (recipe) => {
+    const { user, accessToken } = JSON.parse(localStorage.getItem('user'));
+    const { _id:recipeId } = recipe;
+    const payload = { user, accessToken, recipeId };
 
+    const submission = await fetch(`${apiURL}/recipes/`, {
+        method:"DELETE",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(payload)
+    })
+    // return await submission.json();
+    return submission;
 }
