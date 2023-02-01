@@ -2,22 +2,44 @@ import React from "react";
 import FormButton from "./Button";
 import { createRecipe, updateRecipe } from "../../api/recipe";
 
+const loadFile = async (file) => {
+    let stringData;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        stringData = window.btoa(event.target.result);
+    }
+
+}
+
 const RecipeForm = ({ pageTitle, current, setCurrent, setPage }) => {
-    let title ='', imgSrc ='', parsedIngredients ='', parsedDirections ='';
+    let title ='', parsedIngredients ='', parsedDirections ='', image;
+
+    const reader = new FileReader();
+        reader.onload = ( () => {image = window.btoa(reader.result);} );
+
     if(current){
         title = current.title;
         parsedIngredients = current.ingredients.join('\n');
         parsedDirections = current.directions.join('\n');
     }
+
+    const handleFileChange = (event) => {
+        // Check reader state
+        reader.readAsBinaryString(event.target.files[0]);
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        // Converts multi line inputs into array
         const getTextArea = (input) => {
             return input.split('\n');
         }
+
         const recipe = {
             title : event.target.title.value,
             ingredients : getTextArea(event.target.ingredients.value),
             directions : getTextArea(event.target.directions.value),
+            image : image ? image : ''
         }
         let response;
         if(pageTitle.toLowerCase().includes('edit')){
@@ -49,7 +71,7 @@ const RecipeForm = ({ pageTitle, current, setCurrent, setPage }) => {
                 <label htmlFor="directions">Directions:</label>
                 <textarea name="directions" id="directions" cols="30" rows="10" defaultValue={parsedDirections}></textarea>
                 <label htmlFor='imageUpload'>Add an Image: </label>
-                <input type="file" name="imageUpload" id="imageUpload" style={{
+                <input type="file" onChange={handleFileChange} name="imageUpload" id="imageUpload" style={{
                     border:'none',
                     height:'32px',
                 }} />

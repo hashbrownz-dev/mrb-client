@@ -38,8 +38,9 @@ const Recipe = ( { current, setPage } ) => {
     }
     const handleClickDelete = async (event) => {
 
-        const result = await deleteRecipe(current);
-        console.log(result);
+        // const result = await deleteRecipe(current);
+        deleteRecipe(current).then(setPage('index'));
+        
     }
     console.log(`Rendering Recipe Page`)
     return(

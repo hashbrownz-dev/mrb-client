@@ -8,11 +8,12 @@ export const indexRecipes = async() => {
 
 export const createRecipe = async (recipe) => {
     const { user, accessToken } = JSON.parse(localStorage.getItem('user'));
-    const { title, ingredients, directions } = recipe;
+    const { title, ingredients, directions, image } = recipe;
     const payload = {
         title,
         ingredients,
         directions,
+        image,
         user,
         accessToken
     }
