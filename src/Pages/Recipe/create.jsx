@@ -1,9 +1,9 @@
 import React from 'react';
 import RecipeForm from '../../Components/Forms/Recipe';
 
-const CreateRecipe = ()=>{
+const CreateRecipe = ({setPage, setCurrent})=>{
     return(
-        <RecipeForm pageTitle="Create New Recipe" />
+        <RecipeForm pageTitle="Create New Recipe" setPage={setPage} setCurrent={setCurrent} />
     )
 }
 

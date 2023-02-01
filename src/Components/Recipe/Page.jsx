@@ -37,6 +37,7 @@ const Recipe = ( { current, setPage } ) => {
     const handleClickDelete = (event) => {
         console.log('Delete Recipe')
     }
+    console.log(`Rendering Recipe Page`)
     return(
         <div className='recipe'>
             <h2>{title}</h2>

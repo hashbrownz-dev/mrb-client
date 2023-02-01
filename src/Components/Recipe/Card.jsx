@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipeCard = ({ recipe, current, setCurrent, page, setPage }) => {
 
-    const { title, imgSrc, ingredients, directions } = recipe;
+    const { title, imgSrc, ingredients, directions, _id } = recipe;
 
     const handleClick = () => {
         setCurrent({
@@ -10,6 +10,7 @@ const RecipeCard = ({ recipe, current, setCurrent, page, setPage }) => {
             imgSrc,
             ingredients,
             directions,
+            _id
         });
         setPage('read recipe');
     }
