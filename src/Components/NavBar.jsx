@@ -28,7 +28,7 @@ const LinkContainer = ({ auth, setAuth, page, setPage }) => {
 
     return (
         <ul>
-            {content.map(element => <Link auth={auth} setAuth={setAuth} to={element} setPage={setPage} logOut={(element === 'log out')} />)}
+            {content.map((element, index) => <Link auth={auth} setAuth={setAuth} to={element} setPage={setPage} logOut={(element === 'log out')} key={index} />)}
         </ul>
     )
 }

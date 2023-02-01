@@ -46,7 +46,7 @@ const Recipe = ( { current, setPage } ) => {
         <div className='recipe'>
             <h2>{title}</h2>
             <div className='recipe-container'>
-                <img src={imgSrc} alt={title} className='recipe-hero' />
+                <img src={imgSrc?imgSrc:'./images/default.jpg'} alt={title} className='recipe-hero' />
                 <div className='id-container'>
                     <h3>Ingredients:</h3>
                     <Ingredients ingredients={ingredients} />

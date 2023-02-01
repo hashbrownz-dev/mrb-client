@@ -16,7 +16,7 @@ const RecipeCard = ({ recipe, current, setCurrent, page, setPage }) => {
     }
     return(
         <div className="recipe-card" onClick={handleClick}>
-            <img src={imgSrc} alt={title} />
+            <img src={imgSrc ? imgSrc : './images/default.jpg'} alt={title} />
             <p>{title}</p>
         </div>
     )
