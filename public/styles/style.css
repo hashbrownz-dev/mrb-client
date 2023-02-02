@@ -12,6 +12,10 @@ html,body,main{
     padding: 0;
 }
 
+#root{
+    background-image: url(../images/logIn2.jpg)
+}
+
 #root > div{
     min-height: 100vh;
 }
@@ -26,7 +30,10 @@ footer{
 }
 
 h2{
-    color: var(--primary);
+    background-color: var(--primary);
+    color: white;
+    margin-top: 0;
+    padding: 1em;
     text-align: center;
 }
 
@@ -62,7 +69,7 @@ textarea:focus-visible, input:focus-visible{
 /* USER FORMS */
 
 .user-form{
-    margin: 0 auto;
+    margin: 2em auto;
     max-width: 360px;
 }
 
@@ -109,11 +116,13 @@ textarea:focus-visible, input:focus-visible{
 /* RECIPE FORMS */
 
 .recipe-form{
-    color: var(--primary);
+    background-color: var(--primary);
+    color: white;
     font-size: 18px;
     font-weight: 700;
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 480px;
+    padding: 1em;
 }
 
 /* NAV */
@@ -157,6 +166,7 @@ nav > ul > li{
 }
 
 .recipe-card{
+    background: white;
     box-sizing: border-box;
     border: 1px solid var(--neutral);
     border-radius: 8px;
@@ -186,13 +196,14 @@ nav > ul > li{
 
 .recipe{
     margin: 0 auto;
-    max-width: 1024px;
+    /* max-width: 1024px; */
 }
 
 .recipe-container{
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    max-width: 1024px;
 }
 
 .recipe-hero{
@@ -200,7 +211,12 @@ nav > ul > li{
 }
 
 .id-container{
+    background-color: white;
+    border-radius: 1em;
+    padding: 1em;
     margin: 16px;
+    overflow-wrap: break-word;
+    width: 30%;
 }
 
 .recipe-controls{
@@ -211,4 +227,31 @@ nav > ul > li{
 .recipe-controls > .form-button{
     margin: 16px;
     width: 120px;
+}
+
+/* LOADER */
+
+.loader{
+    background-color: var(--secondary);
+    border-radius: 16px;
+    color: var(--neutral);
+    margin: 8em auto;
+    padding: 1em;
+    width: fit-content;
+}
+
+.loader > p{
+    font-weight: 700;
+    text-align: center;
+}
+
+.logOutMessage{
+    background-color: var(--secondary);
+    border-radius: 1em;
+    color: var(--neutral);
+    font-weight: 700;
+    margin: 1em auto;
+    padding: 1em;
+    width: fit-content;
+    text-align: center;
 }

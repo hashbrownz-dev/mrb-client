@@ -2,20 +2,11 @@ import React from "react";
 import FormButton from "./Button";
 import { createRecipe, updateRecipe } from "../../api/recipe";
 
-const loadFile = async (file) => {
-    let stringData;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-        stringData = window.btoa(event.target.result);
-    }
-
-}
-
 const RecipeForm = ({ pageTitle, current, setCurrent, setPage }) => {
     let title ='', parsedIngredients ='', parsedDirections ='', image;
 
     const reader = new FileReader();
-        reader.onload = ( () => {image = window.btoa(reader.result);} );
+    reader.onload = ( () => {image = window.btoa(reader.result);} );
 
     if(current){
         title = current.title;
@@ -70,11 +61,11 @@ const RecipeForm = ({ pageTitle, current, setCurrent, setPage }) => {
                 <textarea name="ingredients" id="ingredients" cols="30" rows="10" defaultValue={parsedIngredients}></textarea>
                 <label htmlFor="directions">Directions:</label>
                 <textarea name="directions" id="directions" cols="30" rows="10" defaultValue={parsedDirections}></textarea>
-                <label htmlFor='imageUpload'>Add an Image: </label>
-                <input type="file" onChange={handleFileChange} name="imageUpload" id="imageUpload" style={{
+                {/* <label htmlFor='imageUpload'>Add an Image: </label> */}
+                {/* <input type="file" onChange={handleFileChange} name="imageUpload" id="imageUpload" style={{
                     border:'none',
                     height:'32px',
-                }} />
+                }} /> */}
                 <FormButton type="submit" value={pageTitle} />
             </form>
         </div>
