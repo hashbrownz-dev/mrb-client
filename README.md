@@ -2,6 +2,8 @@
 
 ## Introduction
 
+![Splash](./public/images/LogIn.PNG)
+
 My Recipe Book is a simple web app that allows users to share their favorite recipes online.  Users can create, view, update, and delete recipes associated with their account as well as view, save, and comment on recipes created by other users.
 
 ## Technologies Used
